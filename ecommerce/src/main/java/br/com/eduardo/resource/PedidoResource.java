@@ -15,12 +15,12 @@ public class PedidoResource {
 	
 	@Autowired
 	private KafkaTemplate<String, Pedido> kafkaTemplate;
-	private static final String TOPIC = "Kafka_Example";
+	private static final String TOPIC = "Kafka_Example_json";
 
 	@GetMapping("/publish/{produto}")
 	public String post(@PathVariable("produto") final String produto) {
 		
-		kafkaTemplate.send(TOPIC, new Pedido(produto, 125.1, 2L));
+		kafkaTemplate.send(TOPIC, new Pedido(produto, "Samsung"));
 		return "Publish successfully";
 	}
 	

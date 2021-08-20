@@ -4,17 +4,15 @@ public class Pedido {
 
 	private String descricao;
 	private String marca;
-	
+
 	public Pedido() {
 	}
-	
+
 	public Pedido(String descricao, String marca) {
 		super();
 		this.descricao = descricao;
 		this.marca = marca;
 	}
-
-
 
 	public String getDescricao() {
 		return descricao;
@@ -31,6 +29,12 @@ public class Pedido {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
+	@Override
+	public String toString() {
+		return "Produto [descricao=" + descricao + ", marca=" + marca + "]";
+	}
+
 	
 	
 }
